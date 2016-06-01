@@ -61,11 +61,6 @@ class StockOrder:
   
   def _log_order_with_append(self, order):
     self.buysellqueue.append(order.side, order.company, self._log_order(order))
-    
-
- 
-
-
 
   def read_orders(self):
     entered_orders = OrderList()
@@ -96,8 +91,6 @@ class StockOrder:
     return entered_orders
 
 
-      
-
 if __name__ == '__main__':
 
   buysellqueue = BuySellQueue()
@@ -113,5 +106,3 @@ if __name__ == '__main__':
     orderlog.prettyprint()
     print "\n\nPress ctrl-D to exit the script"
 
-
-  
