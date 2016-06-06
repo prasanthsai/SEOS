@@ -30,16 +30,16 @@ class CompanyList:
   def add(self, symbol):
     add_company(symbol)
 
-  def is_exists(self, symbol):
+  def exists(self, symbol):
     return companies.has_key(symbol)
 
   def updatemethod(self, symbol, method, value):
-    if not self.is_exists(symbol):
+    if not self.exists(symbol):
       self.add(symbol)
     companies[symbol][method] = value
 
   def getmethod(self, symbol, method):
-    if self.is_exists(symbol):
+    if self.exists(symbol):
       return companies[symbol][method]
     else:
       return
