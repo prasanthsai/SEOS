@@ -30,3 +30,5 @@ class Order(object):
       str(self.remaining_quantity) + '\t' + \
       str(self.status())
 
+  def __str__(self):
+      return self.pretify()

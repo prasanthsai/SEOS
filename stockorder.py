@@ -30,6 +30,7 @@ class StockOrder:
         order = getattr(self, '_lower')(order, mutex_remaining_quantity)
       else:
         order = getattr(self, '_equal')(order, mutex_remaining_quantity)
+    return self.orderlog
 
 
 
