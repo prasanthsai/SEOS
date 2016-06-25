@@ -5,16 +5,19 @@ import helpers
 from buysellqueue import BuySellQueue
 from order import *
 from orderlist import *
-
+from stockvalue import StockValue
 
 class StockOrder:
 
   def __init__(self):
     self.buysellqueue = BuySellQueue()
     self.orderlog = OrderList()
+    self.stockvalue = StockValue()
 
   def execute_order(self, order):
     companies.add_company(order.company)
+    self.stockvalue.process_stock_value(order.company)
+    
     while True:
       mutex_remaining_quantity = self._get_mutex_remaining_quantity(order.side, order.company)
       if not mutex_remaining_quantity:
